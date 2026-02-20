@@ -1,0 +1,19 @@
+@import "tailwindcss";
+
+:root {
+  --background: #ffffff;   /* Light mode background */
+  --foreground: #171717;   /* Light mode text */
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #040615; /* Dark mode background */
+    --foreground: #f5f5f5; /* Dark mode text */
+  }
+}
+
+body {
+  background-color: var(--background);  /* Use your variable */
+  color: var(--foreground);
+  font-family: Arial, Helvetica, sans-serif;
+}
