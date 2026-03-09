@@ -3,12 +3,6 @@ import React from 'react';
 const StrakzatMainPage = () => {
   return (
     <div className="bg-[#050a14] text-white font-sans selection:bg-blue-500/30">
-      
-    
-
-     
-
-      {/* 3. DIGITAL PRODUCT DESIGN / SERVICES */}
       <section className="max-w-7xl mx-auto px-6 py-24 border-t border-gray-800/50">
         <div className="mb-20">
           <h2 className="text-5xl md:text-7xl font-bold mb-8">Digital product <span className="text-blue-200/80 italic">design</span></h2>

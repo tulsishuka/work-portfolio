@@ -1,34 +1,98 @@
+
+'use client';
+import { useState } from 'react';
+import Image from 'next/image';
 import Link from 'next/link';
 
 const Navbar = () => {
+  const [isOpen, setIsOpen] = useState(false);
+
+  const navLinks = [
+    { name: 'Portfolio', href: '/portfolio' },
+        { name: 'Our Process', href: '/process' },
+
+    { name: 'About', href: '/about' },
+  ];
+
   return (
-    <nav className="fixed top-0 left-0 w-full z-50 flex items-center justify-between px-6 py-4 md:px-12 bg-transparent backdrop-blur-sm">
-      {/* Logo Section */}
-      <div className="flex items-center gap-2 cursor-pointer">
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-          <path d="M12 2L4 7V17L12 22L20 17V7L12 2Z" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-          <path d="M12 22V12" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-          <path d="M20 7L12 12L4 7" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-        </svg>
-      <Link href="/">  <span className="text-white font-bold text-xl tracking-tight">Strakzat</span></Link>
-      </div>
+    <nav className="fixed top-0 left-0 w-full z-50  backdrop-blur-sm ">
+      <div className="max-w-7xl mx-auto flex items-center justify-between px-6 py-4 md:px-12">
+        
+        {/* Logo Area */}
+        <div className="flex items-center flex-shrink-0">
+          <Link href="/">
+            <Image 
+                src="/Navbar/ull.webp" 
+                alt='Strakzat Logo' 
+                width={120} 
+                height={40}
+                className="h-auto w-auto"
+            />
+          </Link>
+        </div>
 
-      {/* Navigation Links */}
-      <div className="hidden md:flex items-center gap-8">
-        <Link href="/work" className="text-white text-sm font-medium hover:text-gray-300 transition-colors">Work</Link>
-        <Link href="/about" className="text-white text-sm font-medium hover:text-gray-300 transition-colors">About</Link>
-        <Link href="/pricing" className="text-white text-sm font-medium hover:text-gray-300 transition-colors">Pricing</Link>
-        <Link href="/contact" className="text-white text-sm font-medium hover:text-gray-300 transition-colors">Contact Us</Link>
-      </div>
+        {/* Navigation Links - Desktop (Centered) */}
+        <div className="hidden md:flex flex-grow justify-center items-center gap-8">
+          {navLinks.map((link) => (
+            <Link 
+              key={link.name}
+              href={link.href} 
+              className="text-white text-base font-medium hover:text-gray-300 transition-colors"
+            >
+              {link.name}
+            </Link>
+          ))}
+        </div>
 
-      {/* Action Button */}
-      <div>
-        <Link href="/contact">
-          <button className="bg-white text-black px-6 py-2.5 rounded-xl font-semibold text-sm hover:bg-gray-200 transition-all active:scale-95">
-            Get in touch
+        {/* Action Button - Desktop */}
+        <div className="hidden md:block flex-shrink-0">
+          <Link href="/contact">
+            <button className="bg-white text-gray-600 px-6 py-2.5 rounded-md font-semibold text-sm hover:bg-gray-100 transition-all active:scale-95 shadow-md">
+            Start Your Project
+            </button>
+          </Link>
+        </div>
+
+        {/* Hamburger Menu Icon - Mobile */}
+        <div className="md:hidden">
+          <button 
+            onClick={() => setIsOpen(!isOpen)}
+            className="text-white focus:outline-none"
+            aria-label="Toggle menu"
+          >
+            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              {isOpen ? (
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+              ) : (
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+              )}
+            </svg>
           </button>
-        </Link>
+        </div>
       </div>
+
+      {/* Mobile Menu */}
+      {isOpen && (
+        <div className="md:hidden bg-[#050B1B] border-t border-white/10">
+          <div className="px-6 pt-2 pb-6 space-y-4 flex flex-col items-center">
+            {navLinks.map((link) => (
+              <Link 
+                key={link.name}
+                href={link.href} 
+                className="text-white text-lg font-medium w-full text-center py-2"
+                onClick={() => setIsOpen(false)}
+              >
+                {link.name}
+              </Link>
+            ))}
+            <Link href="/contact" className="w-full" onClick={() => setIsOpen(false)}>
+              <button className="w-full bg-white text-gray-600 px-6 py-3 rounded-md font-semibold text-sm hover:bg-gray-100 transition-all active:scale-95 shadow-md">
+                Start Your Project
+              </button>
+            </Link>
+          </div>
+        </div>
+      )}
     </nav>
   );
 };

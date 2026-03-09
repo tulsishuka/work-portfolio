@@ -24,10 +24,13 @@ const PortfolioSection = () => {
           <div className="mt-8 md:mt-0">
             <h4 className="font-bold mb-2">Services</h4>
             <ul className="text-gray-400 space-y-1">
-              <li>Web Development (Frontend & Backend)</li>
-              <li>UI/UX Design</li>
-              <li>Responsive & Mobile-friendly Sites</li>
-              <li>Portfolio & Personal Branding Websites</li>
+           
+<li>Websites for Local Businesses </li>
+<li>Full-Stack Web Applications </li>
+<li>Custom Website Development (Frontend & Backend)</li>
+<li>Website Redesign & Performance Optimization</li>
+<li>Design-to-Website Conversion (Figma to Code)</li>
+
             </ul>
           </div>
         </div>
@@ -46,7 +49,7 @@ const PortfolioSection = () => {
         {/* Redirect Button */}
        <div className="flex justify-center">
   <Link
-    href="/work"
+    href="/portfolio"
     className="group flex items-center gap-3 
     bg-[linear-gradient(rgb(29,49,69)_0%,rgb(12,33,54)_100%)] 
     text-white font-semibold py-3 px-10 rounded-md 

@@ -1,64 +1,78 @@
-import { Dribbble, Instagram, Linkedin, Twitter } from 'lucide-react';
-import React from 'react';
+"use client";
+import Image from "next/image";
+import { Instagram, Linkedin } from "lucide-react";
+import React from "react";
 
 const Footer = () => {
   return (
-    <footer className=" text-white font-sans">
-      {/* CTA Section */}
-     
+    <footer className="bg-[#040615] text-white mt-20 border-t border-gray-800">
+      <div className="max-w-7xl mx-auto px-6 py-16">
 
-      {/* Main Footer Info */}
-      <div className="max-w-7xl mx-auto px-6 pt-20 pb-10">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-20">
-          {/* Logo Section */}
-          <div className="flex items-center gap-2">
-            <div className="w-8 h-8 flex items-center justify-center border-2 border-white rounded-sm">
-               <span className="font-black text-xs italic">S</span>
+        <div className="flex  md:grid md:grid-cols-3 gap-12">
+
+          {/* Brand Section */}
+          <div className="flex flex-col gap-3">
+
+            <Image
+              src="/Navbar/ull.webp"
+              alt="LMNS Web Solution Logo"
+              width={150}
+              height={50}
+            />
+
+            {/* Hidden on Phone */}
+            <p className="hidden sm:block text-gray-400 text-sm leading-relaxed max-w-xs">
+              Helping local businesses grow online with modern, responsive 
+              and high-converting websites.
+            </p>
+
+            <div className="flex gap-4 pt-2">
+              <a
+                href="https://www.instagram.com/lmns_website_studio?igsh=MW1ibGJmamY2bG9sdw=="
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-gray-400 hover:text-white transition duration-300"
+              >
+                <Instagram size={20} />
+              </a>
+
+              <a
+                href="https://www.linkedin.com/in/tulsishukla/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-gray-400 hover:text-white transition duration-300"
+              >
+                <Linkedin size={20} />
+              </a>
             </div>
-            <span className="text-2xl font-bold tracking-tight">Strakzat</span>
           </div>
 
-          {/* Headquarters */}
+          {/* Services */}
           <div>
-            <h4 className="font-bold mb-4 text-lg">Headquarters</h4>
-            <ul className="text-gray-400 space-y-1">
-              <li>Voorhaven 27C</li>
-              <li>3025 HC Rotterdam</li>
+            <h4 className="font-semibold mb-6 text-lg">Services</h4>
+            <ul className="text-gray-400 space-y-3 text-sm">
+              <li>UI/UX Design</li>
+              <li>Frontend Development</li>
+              <li>Landing Page Design</li>
+              <li>Local Business Websites</li>
+              <li>Website Rebuild & Redesign</li>
+              <li>Responsive Web Design</li>
             </ul>
           </div>
 
-          {/* Contact */}
+          {/* Quick Links */}
           <div>
-            <h4 className="font-bold mb-4 text-lg">Contact</h4>
-            <ul className="text-gray-400 space-y-1">
-              <li>+31 (6) 39 56 15 80</li>
-              <li>info@strakzat.com</li>
+            <h4 className="font-semibold mb-6 text-lg">Quick Links</h4>
+            <ul className="text-gray-400 space-y-3 text-sm">
+              <li><a href="/portfolio" className="hover:text-white transition">Portfolio</a></li>
+              <li><a href="/process" className="hover:text-white transition">Our Process</a></li>
+              <li><a href="/about" className="hover:text-white transition">About Us</a></li>
+              <li><a href="/contact" className="hover:text-white transition">Contact</a></li>
             </ul>
           </div>
 
-          {/* Socials */}
-          <div>
-            <h4 className="font-bold mb-6 text-lg">Follow us</h4>
-            <div className="flex gap-6 text-gray-400">
-              <Linkedin className="w-5 h-5 hover:text-white cursor-pointer transition-colors" />
-              <Instagram className="w-5 h-5 hover:text-white cursor-pointer transition-colors" />
-              <Twitter className="w-5 h-5 hover:text-white cursor-pointer transition-colors" />
-              <Dribbble className="w-5 h-5 hover:text-white cursor-pointer transition-colors" />
-            </div>
-          </div>
         </div>
 
-        {/* Bottom Bar */}
-        <div className="border-t border-gray-800/50 pt-10 flex flex-col md:flex-row justify-between items-center gap-6 text-sm text-gray-500">
-          <div className="flex gap-8">
-            <a href="#" className="hover:text-white transition-colors">Privacy Policy</a>
-            <a href="#" className="hover:text-white transition-colors">Terms of service</a>
-            <a href="#" className="hover:text-white transition-colors">Cookie Settings</a>
-          </div>
-          <div>
-            ©2024 Strakzat. All Rights Reserved.
-          </div>
-        </div>
       </div>
     </footer>
   );

@@ -1,136 +1,67 @@
-// import Image from 'next/image';
-// import React from 'react';
-// import StrakzatPage from './team/page';
 
-// const AboutSection = () => {
-//   const images = [
-//     "/images/green.webp", // Man on phone
-//     "/images/green.webp", // Monitor/Code
-//    "/images/green.webp", // Architecture/Boat
-//    "/images/green.webp",
-//    "/images/green.webp",
-//   ];
-
-//   return (
-//     <section className="relative bg-[#050a14] py-24 px-6 overflow-hidden">
-//       {/* Top Glow Effect */}
-//       <div 
-//         className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-[500px] pointer-events-none opacity-30"
-//         style={{
-//           background: 'radial-gradient(circle at center, #1e3a8a 0%, transparent 70%)',
-//         }}
-//       />
-
-//       <div className="max-w-7xl mx-auto relative z-10">
-//         {/* Header Content */}
-//         <div className="text-center mb-16">
-//           <h2 className="text-white text-5xl md:text-7xl font-bold mb-6 tracking-tight">
-//             We are <span className="text-blue-300">Strakzat</span>
-//           </h2>
-//           <p className="text-gray-400 text-lg md:text-xl max-w-2xl mx-auto leading-relaxed">
-//             Experts in the design of digital products and able to cater to all 
-//             stages of this process from research to testing.
-//           </p>
-//         </div>
-
-//         {/* Image Card Gallery */}
-//         <div className="grid grid-cols-2 md:grid-cols-5 gap-4 h-[450px] md:h-[550px]">
-//           {images.map((src, index) => (
-//             <div 
-//               key={index} 
-//               className={`relative overflow-hidden rounded-[2rem] shadow-2xl transition-transform duration-500 hover:scale-[1.02] ${
-//                 index % 2 === 0 ? 'mt-0' : 'mt-0' // Adjust if you want a staggered look
-//               }`}
-//             >
-//               <Image width={50} height={50}
-//                 src={src} 
-//                 alt={`Strakzat team ${index + 1}`}
-//                 className="w-full h-full object-cover"
-//               />
-//               {/* Subtle Overlay to match image style */}
-//               <div className="absolute inset-0 bg-blue-900/10 mix-blend-multiply" />
-//             </div>
-//           ))}
-//         </div>
-//       </div>
-//       <StrakzatPage/>
-//     </section>
-//   );
-// };
-
-// export default AboutSection;
-
-
-
-
-
-import Image from "next/image";
+import Link from "next/link";
 import React from "react";
+import Image from "next/image";
 
-const AboutSection = () => {
+const Page = () => {
   return (
-    <section className="relative bg-[#050a14] py-28 px-6 overflow-hidden">
-      
-      {/* Background Glow */}
-      <div className="absolute -top-40 left-1/2 -translate-x-1/2 w-[800px] h-[800px] bg-blue-600/20 blur-[150px] rounded-full" />
-
-      <div className="max-w-7xl mx-auto relative z-10 grid md:grid-cols-2 gap-16 items-center">
-
-        {/* Left Content */}
-        <div>
-          <p className="text-blue-400 uppercase tracking-widest text-sm mb-4">
-            About Me
-          </p>
-
-          <h2 className="text-white text-4xl md:text-6xl font-bold leading-tight mb-6">
-            Helping Local Businesses
-            <br />
-            Grow Online 🚀
-          </h2>
-
-          <p className="text-gray-400 text-lg leading-relaxed mb-8">
-            I’m a freelance web developer who builds modern, responsive websites 
-            for local businesses. My goal is simple — help businesses attract more 
-            customers, build trust, and increase revenue through powerful digital presence.
-          </p>
-
-          <div className="flex flex-wrap gap-4">
-            <span className="px-5 py-2 bg-white/5 border border-white/10 rounded-full text-sm text-gray-300">
-              Responsive Design
-            </span>
-            <span className="px-5 py-2 bg-white/5 border border-white/10 rounded-full text-sm text-gray-300">
-              Fast Performance
-            </span>
-            <span className="px-5 py-2 bg-white/5 border border-white/10 rounded-full text-sm text-gray-300">
-              SEO Friendly
-            </span>
-          </div>
-        </div>
-
-        {/* Right Image Layout */}
-        <div className="relative">
-          <div className="relative rounded-[2rem] overflow-hidden shadow-2xl">
+    // <section className="min-h-screen bg-[#030712] text-white px-6 md:px-16 py-16">
+    <section className="bg-[#030712] text-white px-6 md:px-16 py-16">
+      <div className="max-w-4xl mx-auto text-center">
+        
+        {/* Logo Section */}
+        <div className="flex justify-center mb-3 mt-10">
+          <Link href="/" className="flex-shrink-0">
             <Image
-              src="/images/green.webp"
-              alt="Freelancer working"
-              width={800}
-              height={600}
-              className="w-full h-[500px] object-cover"
+              src="/Navbar/ull.webp"
+              alt="Strakzat Logo"
+              width={180}
+              height={60}
+              priority
+              className="h-auto w-auto"
             />
-          </div>
-
-          {/* Floating Card */}
-          <div className="absolute -bottom-8 -left-8 bg-[#0c1626] border border-white/10 backdrop-blur-xl p-6 rounded-2xl shadow-xl w-[250px]">
-            <p className="text-white text-3xl font-bold">20+</p>
-            <p className="text-gray-400 text-sm mt-1">
-              Websites Designed & Developed
-            </p>
-          </div>
+          </Link>
         </div>
 
+        {/* Bigger Sentences */}
+        <div className="space-y-8 text-gray-300 text-xl md:text-2xl leading-relaxed mb-14">
+          <p>
+            At <span className="text-blue-400 font-semibold">LMNS Web Solution</span>, 
+            we help small businesses and startups build responsive websites 
+            that create a strong online presence.
+          </p>
+
+          <p>
+            Our goal is simple — to design clean, fast, and professional 
+            websites that help businesses grow and attract more customers.
+          </p>
+
+          <p>
+            We believe a website is not just about design. 
+            It is about trust, performance, and creating real value 
+            for your business.
+          </p>
+        </div>
+
+        {/* CTA Button */}
+        <div className="flex justify-center">
+          <Link
+            href="/portfolio"
+            className="group flex items-center gap-3 
+            bg-[linear-gradient(rgb(29,49,69)_0%,rgb(12,33,54)_100%)] 
+            text-white font-semibold py-4 px-12 rounded-md 
+            transition-all duration-300 shadow-xl
+            hover:shadow-sky-950/50 hover:scale-105"
+          >
+            Show More Work
+            <span className="group-hover:translate-x-1 transition-transform">
+              →
+            </span>
+          </Link>
+        </div>
       </div>
     </section>
   );
 };
 
-export default AboutSection;
+export default Page;
